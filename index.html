@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+        </header>
+        
+        <div class="task-form">
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <textarea id="task-description" placeholder="Task Description"></textarea>
+                <div class="form-row">
+                    <select id="task-priority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <input type="date" id="task-due-date">
+                </div>
+                <button type="submit" id="submit-task">Add Task</button>
+            </form>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-controls">
+                <input type="text" id="search-input" placeholder="Search tasks...">
+                <select id="filter-priority">
+                    <option value="all">All Priorities</option>
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <select id="sort-by">
+                    <option value="created">Sort by Created Date</option>
+                    <option value="due">Sort by Due Date</option>
+                    <option value="priority">Sort by Priority</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tasks-container">
+            <h2>Your Tasks</h2>
+            <div id="tasks-list">
+                <!-- Tasks will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="edit-task-form">
+                <input type="hidden" id="edit-task-id">
+                <input type="text" id="edit-task-title" placeholder="Task Title" required>
+                <textarea id="edit-task-description" placeholder="Task Description"></textarea>
+                <div class="form-row">
+                    <select id="edit-task-priority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <input type="date" id="edit-task-due-date">
+                </div>
+                <div class="form-row">
+                    <select id="edit-task-status">
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" id="update-task">Update Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

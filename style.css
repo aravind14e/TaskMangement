@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #3498db;
+    font-weight: 700;
+}
+
+.task-form, .filter-section, .tasks-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.task-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"], textarea, select, input[type="date"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row > * {
+    flex: 1;
+}
+
+button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filter-controls > * {
+    flex: 1;
+}
+
+.tasks-container h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-item {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-left: 5px solid #3498db;
+}
+
+.task-item.low-priority {
+    border-left-color: #2ecc71;
+}
+
+.task-item.medium-priority {
+    border-left-color: #f39c12;
+}
+
+.task-item.high-priority {
+    border-left-color: #e74c3c;
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    border-left-color: #7f8c8d;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.task-actions button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.edit-btn {
+    background-color: #f39c12;
+}
+
+.edit-btn:hover {
+    background-color: #d35400;
+}
+
+.complete-btn {
+    background-color: #2ecc71;
+}
+
+.complete-btn:hover {
+    background-color: #27ae60;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.task-description {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.task-status {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #f1c40f;
+    color: #34495e;
+}
+
+.status-in-progress {
+    background-color: #3498db;
+    color: white;
+}
+
+.status-completed {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.close-modal:hover {
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+}
