@@ -1,10 +1,6 @@
 # Task Management App 📝
 
-A simple task manager built with Node.js and Express.
-
-## 🚀 Live Demo
-
-[Click here to open the app](http://localhost:3000)
+A simple task manager built with Node.js and Express
 
 ## 📂 Project Structure
 
